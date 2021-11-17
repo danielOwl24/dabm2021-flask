@@ -24,10 +24,16 @@
 
 
 </head>
-<body>
-    <div id = "login">
+<body style = "background-image: url('/static/fondo2.jpg')">
+    <div class= "container" id = "login">
         <form action="/validar" method="post" id = "formLogin">
             <img alt="Logo Escuela" height="147" src="https://escuelaing.s3.amazonaws.com/staging/images/logo-ecijg.width-380.png?AWSAccessKeyId=AKIAWFY3NGTFBJGCIWME&amp;Signature=hc%2F3ceEqsGrYYPV0e4IsvUlqmig%3D&amp;Expires=1637630091" width="380">
+            <p>{% if resultado == False %}
+                <div class="alert-warning" role="alert">
+                  Usuario o contraseña incorrectos, por favor ingrese los datos nuevamente.
+                </div>
+                {% endif %}
+            </p>
             <p class = "parrafo">Usuario: <input type = "text" name = "usuario" id = "usuario"></p> 
             <p class = "parrafo">Contraseña: <input type = "password" name = "password" id = "password"> </p> 
             <p><input type = "submit" class = "boton" value="Ingresar" onclick="boton()"> </p> 

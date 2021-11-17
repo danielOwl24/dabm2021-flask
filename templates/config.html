@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de parámetros</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            function boton(){
+                var baja = [0,0];
+                var normal = [0,0];
+                var alta = [0,0];
+                baja[0] = document.getElementById("bajoMin").value;
+                baja[1] = document.getElementById("bajoMax").value;
+                normal[0] = document.getElementById("normalMin").value;
+                normal[1] = document.getElementById("normalMax").value;
+                alta[0] = document.getElementById("altoMin").value;
+                alta[1] = document.getElementById("altoMax").value;
+                document.getElementById('formConfig').submit();
+            }
+        </script>
+</head>
+<body style = "background-image: url('/static/fondo2.jpg')">
+    <form action="/config" method="post" id = "formConfig">
+    <p><h4>PARÁMETROS DE CONFIGURACIÓN</h4></p>
+    <br>
+    <p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Rango</th>
+                <th>Mínimo</th>
+                <th>Máximo</th>
+            </tr>
+            </thead>
+            <tbody>     
+            <tr class="table-primary">
+                <td>Hipotermia</td>
+                <td><input type="number" id = "bajoMin" name = "bajoMin"></td>
+                <td><input type="number" id = "bajoMax" name = "bajoMax"></td>
+            </tr>
+            <tr class="table-success">
+                <td>Normal</td>
+                <td><input type="number" id = "normalMin" name = "normalMin"></td>
+                <td><input type="number" id = "normalMax" name = "normalMax"></td>
+            </tr>
+            <tr class="table-danger">
+                <td>Fiebre</td>
+                <td><input type="number" id = "altoMin" name = "altoMin"></td>
+                <td><input type="number" id = "altoMax" name = "altoMax"></td>
+            </tr>
+            
+            </tbody>
+        </table>
+      </p>
+
+       
+            <p> <input class = "btn btn-primary" type = "submit" value = "Guardar" onclick = "boton()"> </p>
+        </form>   
+          
+</body>
+</html>
